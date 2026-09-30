@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>User Input Form</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * { box-sizing: border-box;
+
+            /* If viewport width is 600px or more, set font-size to 80px */
+            @media screen and (min-width: 600px) {
+            #div1 { font-size: 80px;}
+            }
+                /* Default (desktop/tablet) styles */
+            form {
+                max-width: 400px;
+                margin: 50px auto;
+            }
+            #div1 {
+            background-color: lightgrey;
+            padding: 20px;
+            font-size: 30px;
+            }
+        }
+
+        input[type="submit"] {
+            padding: 12px 24px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        /* Smartphone-specific styles (≤767px) */
+        @media only screen and (max-width: 767px) {
+            input[type="submit"] {
+                width: 100%;           /* Full width for easier tapping */
+                padding: 16px 0;       /* Taller button for touch */
+                font-size: 18px;       /* Larger text for readability */
+            }
+
+            #div1 {
+            background-color: lightgrey;
+            padding: 20px;
+            font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="div1" style="background: cornflowerblue;
+                padding:5px;">
+        <h3>You picked {{ data['site'] }}</h3>
+        <p>Please choose day:</p>
+        <form action="/submit-day" method="POST">
+            <input type="radio" id="mon" name="day" value="Mon">
+            <label for="mon">Monday</label><br>
+            <input type="radio" id="tues" name="day" value="Tues">
+            <label for="tues">Tuesday</label><br>
+            <input type="radio" id="wed" name="day" value="Wed">
+            <label for="wed">Wednesday</label><br>
+            <input type="radio" id="thurs" name="day" value="Thurs">
+            <label for="thurs">Thursday</label><br>
+            <input type="radio" id="fri" name="day" value="Fri">
+            <label for="fri">Friday</label><br>
+            <input type="hidden" name="site" value="{{ data['site'] }}">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

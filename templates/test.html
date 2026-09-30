@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>User Input Form</title>
+</head>
+<body>
+    <div id="textToCopy">{{ str_render }}</div>
+    <button onclick="copyText()">Copy</button>
+
+    <script>
+        async function copyText() {
+            try {
+            const text = document.getElementById("textToCopy").textContent;
+
+            // Write text to clipboard (modern API)
+            await navigator.clipboard.writeText(text);
+
+            } catch (err) {
+            console.error("Failed to copy:", err);
+            alert("Copy failed. Your browser may not support Clipboard API.");
+            }
+        }
+    </script>
+
+</body>
+</html>

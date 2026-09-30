@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add Student Form</title>
+    </head>
+    <body>
+        <h3>Add a new student</h3>
+        <form action="/brickhorse2" method="POST">
+            <input type="text" id="initials" name="initials">
+            <label for="initials">Add intials</label><br>
+
+            <p>Select a site</p>
+            <input type="radio" id="tg" name="site" value="1">
+            <label for="tg">TG</label><br>
+            <input type="radio" id="mh" name="site" value="3">
+            <label for="mh">McLendon</label><br>
+            <input type="radio" id="gh" name="site" value="2">
+            <label for="gh">Greenhouse</label><br>
+            <input type="radio" id="se" name="site" value="4">
+            <label for="se">Skyline</label><br>
+            <input type="radio" id="le" name="site" value="5">
+            <label for="le">Lowell</label>
+
+            <p>Select days</p>
+            <input type="checkbox" id="mon" name="day" value="Mon">
+            <label for="mon">Monday</label>
+            <input type="checkbox" id="tues" name="day" value="Tues">
+            <label for="tues">Tuesday</label>
+            <input type="checkbox" id="wed" name="day" value="Wed">
+            <label for="wed">Wednesday</label>
+            <input type="checkbox" id="thurs" name="day" value="Thurs">
+            <label for="thurs">Thursday</label>
+            <input type="checkbox" id="fri" name="day" value="Fri">
+            <label for="fri">Friday</label>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>
