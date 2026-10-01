@@ -8,8 +8,8 @@
 <body>
     <div id="div1">
         <div id="textToCopy">{{ str_render }}</div>
-        <button id="copybtn" onclick="copyText()">Copy</button><br>
-        <button id="copybtn"><a href="{{ url_for('textgen') }}">Start Over</a></button>
+        <button onclick="copyText()">Copy</button><br>
+        <button><a href="{{ url_for('text_form') }}">Start Over</a></button>
 
         <script>
             async function copyText() {
