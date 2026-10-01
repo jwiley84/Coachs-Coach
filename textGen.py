@@ -12,15 +12,15 @@ app = Flask(__name__)
 #local DB location
 db_loc = './textgen.db'
 
-#this is a placeholder for future routes
+#Main Route is the start of the text string generator for ease of user use
 @app.route('/', methods=['GET'])
 def text_form():
-    return 'This is the basis for the textGen form'
+    return render_template("formPageSite.html")
 
 #CURRENT SITE PAGE LOGIC - fix when adding in ERS feature
-@app.route('/textgen', methods=['GET'])
-def textgen():
-    return render_template("formPageSite.html")
+# @app.route('/textgen', methods=['GET'])
+# def textgen():
+#     return render_template("formPageSite.html")
 
 @app.route('/submit-site', methods=['POST'])
 def submit_site():
