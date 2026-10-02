@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>User Input Form</title>
-  <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
+{% extends "base.html" %}
+
+{% block title %} Attendance String {% endblock %}
+
+{% block content %}
     <div id="div1">
         <div id="textToCopy">{{ str_render }}</div>
         <button onclick="copyText()">Copy</button><br>
@@ -26,5 +23,4 @@
             }
         </script>
     </div>
-</body>
-</html>
+{% endblock %}

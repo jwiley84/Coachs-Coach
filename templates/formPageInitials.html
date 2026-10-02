@@ -1,26 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<title>Coaches' coach</title>
-		<meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-	</head>
-	<body>
-	    <div id="div1">
-    		<h3>You picked {{ data['site'] }} and {{  data['day']  }}</h3>
-    		<p>Please choose initials:</p>
-    		<form action="/submit-initials" method="POST">
+{% extends "base.html" %}
 
-    		    {% for attendee in attendees %}
-    		    <input type="checkbox" id={{attendee}} name="initials" value={{attendee}}>
-    		    <label for={{attendee}}>{{attendee}}</label><br>
-    		    <!--<p>{{ attendee }}</p>-->
-    		    {% endfor %}
+{% block title %} Initials Selection {% endblock %}
 
-                <input type="hidden" name="site" value="{{ data['site'] }}">
-                <input type="hidden" name="day" value="{{ data['day'] }}">
-                <input type="submit" value="Submit">
-            </form>
-        </div>
-	</body>
-</html>
+{% block content %}
+	<div id="div1">
+		<h3>You picked {{ data['site'] }} and {{  data['day']  }}</h3>
+		<p>Please choose initials:</p>
+		<form action="/submit-initials" method="POST">
+
+			{% for attendee in attendees %}
+				<input type="checkbox" id={{attendee}} name="initials" value={{attendee}}>
+				<label for={{attendee}}>{{attendee}}</label><br>
+			{% endfor %}
+
+			<input type="hidden" name="site" value="{{ data['site'] }}">
+			<input type="hidden" name="day" value="{{ data['day'] }}">
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+{% endblock %}

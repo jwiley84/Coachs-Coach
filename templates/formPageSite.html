@@ -1,32 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Coaches' coach</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    </head>
-    <body>
-        <h3>Hello, Job Coach!</h3>
-        <div class="row">
-            <div class="col-sm-12" id="div1">
-                <p>Please choose jobsite:</p>
-                <form action="/submit-site" method="POST">
-                    <input type="radio" id="tg" name="site" value="TG">
-                    <label for="tg">TG</label><br>
-                    <input type="radio" id="gh" name="site" value="GH">
-                    <label for="gh">Greenhouse</label><br>
-                    <input type="radio" id="mh" name="site" value="MH">
-                    <label for="mh">McLendon</label><br>
-                    <input type="radio" id="se" name="site" value="SE">
-                    <label for="se">Skyline</label><br>
-                    <input type="radio" id="le" name="site" value="LE">
-                    <label for="le">Lowell</label><br>
-                    <input type="submit" value="Submit">
-                </form>
-            </div>
+{% extends "base.html" %}
+
+{% block title %} Site Selection {% endblock %}
+
+{% block content %}
+
+    <h3>Hello, Job Coach!</h3>
+    <div class="row">
+        <div class="col-sm-12" id="div1">
+            <p>Please choose jobsite:</p>
+            <form action="/submit-site" method="POST">
+                <input type="radio" id="tg" name="site" value="TG">
+                <label for="tg">TG</label><br>
+                <input type="radio" id="gh" name="site" value="GH">
+                <label for="gh">Greenhouse</label><br>
+                <input type="radio" id="mh" name="site" value="MH">
+                <label for="mh">McLendon</label><br>
+                <input type="radio" id="se" name="site" value="SE">
+                <label for="se">Skyline</label><br>
+                <input type="radio" id="le" name="site" value="LE">
+                <label for="le">Lowell</label><br>
+                <input type="submit" value="Submit">
+            </form>
         </div>
-    </body>
-</html>
+    </div>
+
+{% endblock %}
