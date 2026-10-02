@@ -17,11 +17,6 @@ db_loc = './textgen.db'
 def text_form():
     return render_template("formPageSite.html")
 
-#CURRENT SITE PAGE LOGIC - fix when adding in ERS feature
-# @app.route('/textgen', methods=['GET'])
-# def textgen():
-#     return render_template("formPageSite.html")
-
 @app.route('/submit-site', methods=['POST'])
 def submit_site():
 

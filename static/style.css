@@ -1,0 +1,28 @@
+.site-card {
+    background-color: #80dfff;
+}
+
+.day-card {
+    background-color: #80ffcf;
+}
+
+.initials-card {
+    background-color: #e5d3e9;
+}
+
+.string-card {
+    background-color: ivory;
+}
+
+.centered-text {
+    text-align: center;
+}
+
+.start-over-button {
+    margin-top: 2rem;
+    background-color: #150d27;
+}
+.submit-button {
+    background-color: #451945;
+    color: white;
+}

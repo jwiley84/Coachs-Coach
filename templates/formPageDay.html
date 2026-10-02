@@ -3,22 +3,35 @@
 {% block title %} Day Selection {% endblock %}
 
 {% block content %}
-    <div id="div1">
-        <h3>You picked {{ data['site'] }}</h3>
-        <p>Please choose day:</p>
-        <form action="/submit-day" method="POST">
-            <input type="radio" id="mon" name="day" value="Mon">
-            <label for="mon">Monday</label><br>
-            <input type="radio" id="tues" name="day" value="Tues">
-            <label for="tues">Tuesday</label><br>
-            <input type="radio" id="wed" name="day" value="Wed">
-            <label for="wed">Wednesday</label><br>
-            <input type="radio" id="thurs" name="day" value="Thurs">
-            <label for="thurs">Thursday</label><br>
-            <input type="radio" id="fri" name="day" value="Fri">
-            <label for="fri">Friday</label><br>
-            <input type="hidden" name="site" value="{{ data['site'] }}">
-            <input type="submit" value="Submit">
-        </form>
+    <div class="card border-dark mb-3 mx-2 day-card">
+        <div class="card-body">
+            <h6 class="card-subtitle mb-3 text-muted">You picked {{ data['site'] }}</h6>
+            <h3 class="card-title">Please choose day:</h3>
+            <form action="/submit-day" method="POST">
+                <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input me-2" type="radio" id="mon" name="day" value="Mon">
+                    <label class="form-check-label fs-3" for="mon">Monday</label>
+                </div>
+                <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input me-2" type="radio" id="tues" name="day" value="Tues">
+                    <label class="form-check-label fs-3" for="tues">Tuesday</label>
+                </div>
+                <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input me-2" type="radio" id="wed" name="day" value="Wed">
+                    <label class="form-check-label fs-3" for="wed">Wednesday</label>
+                </div>
+                <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input me-2" type="radio" id="thurs" name="day" value="Thurs">
+                    <label class="form-check-label fs-3" for="thurs">Thursday</label>
+                </div>
+                <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input me-2" type="radio" id="fri" name="day" value="Fri">
+                    <label class="form-check-label fs-3" for="fri">Friday</label>
+                </div>
+                <input type="hidden" name="site" value="{{ data['site'] }}">
+                <input type="submit" value="Submit" class="submit-button btn btn-lg w-100 submit-btn">
+            </form>
+        </div>
+
     </div>
 {% endblock %}

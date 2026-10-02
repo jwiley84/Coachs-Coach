@@ -3,23 +3,31 @@
 {% block title %} Site Selection {% endblock %}
 
 {% block content %}
-
-    <h3>Hello, Job Coach!</h3>
-    <div class="row">
-        <div class="col-sm-12" id="div1">
-            <p>Please choose jobsite:</p>
+    <div class="card border-dark mb-3 mx-2 site-card">
+        <div class="card-body">
+            <h3 class="card-title">Please choose a jobsite</h3>
             <form action="/submit-site" method="POST">
-                <input type="radio" id="tg" name="site" value="TG">
-                <label for="tg">TG</label><br>
-                <input type="radio" id="gh" name="site" value="GH">
-                <label for="gh">Greenhouse</label><br>
-                <input type="radio" id="mh" name="site" value="MH">
-                <label for="mh">McLendon</label><br>
-                <input type="radio" id="se" name="site" value="SE">
-                <label for="se">Skyline</label><br>
-                <input type="radio" id="le" name="site" value="LE">
-                <label for="le">Lowell</label><br>
-                <input type="submit" value="Submit">
+                <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input me-2" type="radio" id="tg" name="site" value="TG">
+                    <label class="form-check-label fs-3" for="tg">TG</label>
+                </div>
+                <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input me-2" type="radio" id="gh" name="site" value="GH">
+                    <label class="form-check-label fs-3" for="gh">Greenhouse</label>
+                </div>
+                <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input me-2" type="radio" id="mh" name="site" value="MH">
+                    <label class="form-check-label fs-3" for="mh">McLendon</label>
+                </div>
+                <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input me-2" type="radio" id="se" name="site" value="SE">
+                    <label class="form-check-label fs-3" for="se">Skyline</label>
+                </div>
+                <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input me-2" type="radio" id="le" name="site" value="LE">
+                    <label class="form-check-label fs-3" for="le">Lowell</label>
+                </div>
+                <input type="submit" value="Submit" class="submit-button btn btn-lg w-100">
             </form>
         </div>
     </div>

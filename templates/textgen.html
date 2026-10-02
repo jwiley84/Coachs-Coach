@@ -3,10 +3,14 @@
 {% block title %} Attendance String {% endblock %}
 
 {% block content %}
-    <div id="div1">
-        <div id="textToCopy">{{ str_render }}</div>
-        <button onclick="copyText()">Copy</button><br>
-        <button><a href="{{ url_for('text_form') }}">Start Over</a></button>
+    <div class="card border-dark mb-3 mx-2 string-card">
+        <div class="card-body">
+            <h3 class="card-title">Click 'Copy' to copy text</h3>
+            <h6 class="card-subtitle mb-3 text-muted">No need to select or highlight!</h6>
+            <p class="centered-text fs-4" id="textToCopy">{{ str_render }}</p>
+            <button class="submit-button btn btn-lg w-100" onclick="copyText()">Copy</button>
+            <button class="start-over-button btn btn-lg w-100"><a href="{{ url_for('text_form') }}">Start Over</a></button>
+        </div>
 
         <script>
             async function copyText() {
