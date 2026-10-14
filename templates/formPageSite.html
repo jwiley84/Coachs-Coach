@@ -6,7 +6,7 @@
     <div class="card border-dark mb-3 mx-2 site-card">
         <div class="card-body">
             <h3 class="card-title">Please choose a jobsite</h3>
-            <form action="/submit-site" method="POST">
+            <form action="{{ url_for('text_form') }}" method="POST">
                 <div class="form-check d-flex align-items-center">
                     <input class="form-check-input me-2" type="radio" id="tg" name="site" value="TG">
                     <label class="form-check-label fs-3" for="tg">TG</label>
@@ -28,6 +28,7 @@
                     <label class="form-check-label fs-3" for="le">Lowell</label>
                 </div>
                 <input type="submit" value="Submit" class="submit-button btn btn-lg w-100">
+                <input type="hidden" name="step" value="site">
             </form>
         </div>
     </div>

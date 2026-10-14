@@ -7,7 +7,7 @@
 		<div class="card-body">
 			<h6 class="card-subtitle mb-3 text-muted">You picked {{ data['site'] }} and {{  data['day']  }}</h6>
 			<h3 class="card-title">Please choose initials:</h3>
-			<form action="/submit-initials" method="POST">
+			<form action="{{ url_for('text_form') }}" method="POST">
 
 				{% for attendee in attendees %}
 					<div class="form-check d-flex align-items-center">
@@ -20,6 +20,7 @@
 				<input type="hidden" name="site" value="{{ data['site'] }}">
 				<input type="hidden" name="day" value="{{ data['day'] }}">
 				<input type="submit" value="Submit" class="submit-button btn btn-lg w-100">
+				<input type="hidden" name="step" value="initials">
 			</form>
 		</div>
 
