@@ -9,6 +9,7 @@
             <h6 class="card-subtitle mb-3 text-muted">No need to select or highlight!</h6>
             <p class="centered-text fs-4" id="textToCopy">{{ str_render }}</p>
             <button class="submit-button btn btn-lg w-100" onclick="copyText()">Copy</button>
+            <!-- TODO: fix 'startover' button -->
             <button class="start-over-button btn btn-lg w-100"><a href="{{ url_for('text_form') }}">Start Over</a></button>
         </div>
 
