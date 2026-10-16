@@ -12,7 +12,7 @@ def get_sked_by_day(day, site):
             Weekday: Shorted weekday name such as "Tues" for Tuesday
             Site shortcode: example: 'TG' for Tacoma General
 
-        Returns: data from the roster in WHOTHEFUCKKNOWS format
+        Returns: data from the roster
             
     """
 
@@ -42,7 +42,7 @@ def get_site_list():
     """
     conn = get_db_connection()
     site_list = conn.execute('''
-        SELECT site_name from sites
+        SELECT site_name, code from sites
     ''').fetchall()
 
     conn.close()

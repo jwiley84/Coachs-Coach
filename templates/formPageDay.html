@@ -8,26 +8,12 @@
             <h6 class="card-subtitle mb-3 text-muted">You picked {{ data['site'] }}</h6>
             <h3 class="card-title">Please choose day:</h3>
             <form action="{{ url_for('text_form') }}" method="POST">
-                <div class="form-check d-flex align-items-center">
-                    <input class="form-check-input me-2" type="radio" id="mon" name="day" value="Mon">
-                    <label class="form-check-label fs-3" for="mon">Monday</label>
-                </div>
-                <div class="form-check d-flex align-items-center">
-                    <input class="form-check-input me-2" type="radio" id="tues" name="day" value="Tues">
-                    <label class="form-check-label fs-3" for="tues">Tuesday</label>
-                </div>
-                <div class="form-check d-flex align-items-center">
-                    <input class="form-check-input me-2" type="radio" id="wed" name="day" value="Wed">
-                    <label class="form-check-label fs-3" for="wed">Wednesday</label>
-                </div>
-                <div class="form-check d-flex align-items-center">
-                    <input class="form-check-input me-2" type="radio" id="thurs" name="day" value="Thurs">
-                    <label class="form-check-label fs-3" for="thurs">Thursday</label>
-                </div>
-                <div class="form-check d-flex align-items-center">
-                    <input class="form-check-input me-2" type="radio" id="fri" name="day" value="Fri">
-                    <label class="form-check-label fs-3" for="fri">Friday</label>
-                </div>
+               {% for label, value in days %}
+					<div class="form-check d-flex align-items-center">
+						<input class="form-check-input me-2" type="radio" id={{value}} name="day" value={{value}}>
+						<label class="form-check-label fs-3" for={{value}}>{{label}}</label>
+					</div>
+				{% endfor %}
                 <input type="hidden" name="site" value="{{ data['site'] }}">
                 <input type="submit" value="Submit" class="submit-button btn btn-lg w-100 submit-btn">
                 <input type="hidden" name="step" value="day">

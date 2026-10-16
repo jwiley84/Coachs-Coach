@@ -5,18 +5,25 @@ import database
 
 app = Flask(__name__)
 
+DAYS = [("Monday", "Mon"),
+        ("Tuesday", "Tues"),
+        ("Wednesday", "Wed"),
+        ("Thursday", "Thurs"),
+        ("Friday", "Fri")]
+
 #Main Route is the text string generator for ease of user use
 @app.route('/', methods=['GET', 'POST'])
 def text_form():
 
     if request.method == 'GET':
-        return render_template("formPageSite.html")
+        sites = database.get_site_list()
+        return render_template("formPageSite.html", sites=sites)
 
     step = request.form.get('step')
 
     if step == 'site':
         data = request.form
-        return render_template('formPageDay.html', data=data)
+        return render_template('formPageDay.html', data=data, days=DAYS)
 
     elif step == 'day':
         data = request.form
@@ -40,3 +47,11 @@ def text_form():
 
     else:
         return "Unknown form step", 400
+
+@app.route('/admin', methods=['GET'])
+def admin_landing():
+    return render_template("admin_landing.html")
+
+@app.route('/admin/sites', methods=['GET', 'POST'])
+def admin_sites():
+    return "Sites page"
