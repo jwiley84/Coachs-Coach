@@ -1,0 +1,27 @@
+{% extends "admin_base.html" %}
+{% block title %}Admin Portal{% endblock %}
+
+{% block admin_content %}
+    <div class="card border-dark mb-3 mx-2 site-card admin-card">
+        <div class="card-body">
+          <table>
+            <tr>
+              <th>Site Name</th>
+              <th>Shortcode</th>
+            </tr>
+            {% for name, shortcode in sites %}
+              <tr>
+                <td>{{name}}</td>
+                <td>{{shortcode}}</td>
+              </tr>
+            {% endfor %}
+          </table>
+        </div>
+    </div>
+    <form action="{{ url_for('admin_sites') }}" method="POST">
+        <input type="submit" name="operation" value="add">
+        <input type="submit" name="operation" value="remove">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    </form>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends "admin_base.html" %}
+{% block title %}Admin Portal{% endblock %}
+
+{% block admin_content %}
+{% if error %}
+{{error}}
+{% endif %}
+
+<form id="removeSkedForm" method="POST">
+    {% for day in days %}
+        <input type="checkbox" id="{{day[1]}}" name="day" value="{{day[1]}}">
+        <label for="{{day[1]}}">{{ day[0] }}</label>
+        <br />
+    {% endfor %}
+
+    <select name="initials" id="initials" form="removeSkedForm">
+        <option value="">--Please select a student to remove--</option>
+        {% for person in roster %}
+            <option value="{{person}}">{{ person }}</option>
+        {% endfor %}
+    </select>
+    <br />
+
+    <button type="submit" formaction="{{ url_for('admin_remove_sked', site=site)  }}">SUBMIT</button>
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+</form>
+
+{% endblock %}

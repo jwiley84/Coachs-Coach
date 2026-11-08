@@ -26,3 +26,31 @@
     background-color: #451945;
     color: white;
 }
+
+table, th, td {
+  border: 1px solid black;
+}
+
+.admin-card {
+    margin: 1rem;
+}
+
+.site-btn {
+    margin: 1rem;
+}
+
+.landing-card {
+    background-color: darkcyan;
+    padding: 1rem;
+}
+
+.login-card {
+    background-color: lightgray;
+    padding: 1rem;
+}
+
+.error-card {
+    background-color: lightpink;
+    color: darkred;
+    padding: 1rem;
+}

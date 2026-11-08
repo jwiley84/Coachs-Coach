@@ -1,0 +1,29 @@
+{% extends "admin_base.html" %}
+{% block title %}Admin Portal{% endblock %}
+
+{% block admin_content %}
+    <div class="card border-dark mb-3 mx-2 site-card">
+        <div class="card-body">
+          <table>
+            <tr>
+            {% for day in days %}
+                <th>{{day[0]}}</th>
+            {% endfor %}
+            </tr>
+              {% for column in sked %}
+              <tr>
+                  {% for person in column %}
+                    <td>{{person}}</td>
+                  {% endfor %}
+              </tr>
+              {% endfor %}
+          </table>
+        </div>
+    </div>
+    <form action="{{ url_for('admin_site_sked', site=site) }}" method="POST">
+        <input type="submit" name="operation" value="add">
+        <input type="submit" name="operation" value="remove">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    </form>
+
+{% endblock %}
