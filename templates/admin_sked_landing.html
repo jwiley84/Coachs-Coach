@@ -1,0 +1,14 @@
+{% extends "admin_base.html" %}
+{% block title %}Admin Portal{% endblock %}
+
+{% block admin_content %}
+<div class="card border-dark mb-3 mx-2 site-card admin-card">
+    <form method="POST">
+      {% for site in sites %}
+        <button type="submit" class="btn btn-secondary site-btn" formaction="{{url_for('admin_site_sked', site=site[1])  }}">{{site[0]}}</button>
+        <br />
+      {% endfor %}
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    </form>
+</div>
+{% endblock %}

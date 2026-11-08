@@ -1,0 +1,17 @@
+{% extends "admin_base.html" %}
+{% block title %}Admin Portal{% endblock %}
+
+{% block admin_content %}
+
+    <form action="{{ url_for('admin_add_sites') }}" method="POST">
+        <label for="name">Site Name</label>
+        <input type="text" id="name" name="name">
+        <br />
+        <label for="code">Short Code</label>
+        <input type="text" id="code" name="code">
+        <br />
+        <input type="submit" value="Submit Site">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+    </form>
+
+{% endblock %}

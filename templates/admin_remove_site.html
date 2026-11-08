@@ -1,0 +1,18 @@
+{% extends "admin_base.html" %}
+{% block title %}Admin Portal{% endblock %}
+
+{% block admin_content %}
+
+<form action="{{ url_for('admin_remove_sites') }}" method="POST">
+
+    {% for name,code in sites %}
+        <input type="radio" name="code" id="{{code}}" value="{{code}}">
+        <label for="{{code}}">{{name}}</label>
+
+        <br />
+    {% endfor %}
+    <input type="submit" value="Remove Site">
+    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+</form>
+
+{% endblock %}
